@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-prod-dist":"webpack --mode production --config ./webpack.prod.config.js",
-    "build-dev-dist":"webpack --mode development --config ./webpack.dev.config.js",
+    "build-prod-dist": "webpack --mode production --config ./webpack.prod.config.js",
+    "build-dev-dist": "webpack --mode development --config ./webpack.dev.config.js",
     "build": "webpack  && webpack-dev-server --mode production --config ./webpack.prod.config.js",
-    "dev": "webpack && webpack-dev-server --mode development --config ./webpack.dev.config.js"
+    "dev": "webpack && webpack-dev-server --inline --hot --mode development --config ./webpack.dev.config.js",
+    "start": "webpack-dev-server --inline --hot"
   },
   "keywords": [],
   "author": "",

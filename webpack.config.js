@@ -1,7 +1,6 @@
 const path = require('path');
 
 const htmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
@@ -50,3 +49,23 @@ const config = {
   };
   // Exports
   module.exports = config;
+
+/*********2nd way************************** *
+module.exports = (env, argv) => ({
+  entry : './src/index.js',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'bundle.js',
+    },
+    module: {
+      rules : [
+        // JavaScript/JSX Files
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: 'babel-loader'
+        }
+      }
+    devtool: argv.mode ==='development' ? 'source-map' : false;
+})
+  */
